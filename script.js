@@ -13,7 +13,10 @@ function manipulateData(inputArray) {
         const evenNumbers = numbers.filter(num => num % 2 === 0);
         resolve(evenNumbers);
       }, 1000);
+		
     });
+	 outputElement1 document.getElementById("output");
+    outputElement1.textContent = evenNumbers.join(', '); 
   })
   .then((evenNumbers) => {
     // Multiply even numbers by 2 after 2 seconds
@@ -26,6 +29,7 @@ function manipulateData(inputArray) {
   })
   .then((result) => {
     // Update the text of the HTML element with ID "output"
+	  // document.getElementById.innerText = "output";
     const outputElement = document.getElementById("output");
     outputElement.textContent = result.join(', ');
   })
