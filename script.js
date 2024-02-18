@@ -1,4 +1,3 @@
-//your JS code here. If required.
 function manipulateData(inputArray) {
   // Return a promise that resolves after 3 seconds
   return new Promise((resolve) => {
@@ -13,10 +12,7 @@ function manipulateData(inputArray) {
         const evenNumbers = numbers.filter(num => num % 2 === 0);
         resolve(evenNumbers);
       }, 1000);
-		
     });
-	 outputElement1 document.getElementById("output");
-    outputElement1.textContent = evenNumbers.join(', '); 
   })
   .then((evenNumbers) => {
     // Multiply even numbers by 2 after 2 seconds
@@ -27,9 +23,20 @@ function manipulateData(inputArray) {
       }, 2000);
     });
   })
+	  .then((result1) => {
+    // Update the text of the HTML element with ID "output"
+	  
+    const outputElement1 = document.getElementById("output");
+    outputElement1.textContent = result1.join(', ');
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+}
+
   .then((result) => {
     // Update the text of the HTML element with ID "output"
-	  // document.getElementById.innerText = "output";
+	  
     const outputElement = document.getElementById("output");
     outputElement.textContent = result.join(', ');
   })
