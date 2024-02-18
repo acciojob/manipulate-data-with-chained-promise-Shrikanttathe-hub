@@ -23,16 +23,16 @@ function manipulateData(inputArray) {
       }, 2000);
     });
   })
-	  .then((result1) => {
-    // Update the text of the HTML element with ID "output"
+// 	  .then((result1) => {
+//     // Update the text of the HTML element with ID "output"
 	  
-    const outputElement1 = document.getElementById("output");
-    outputElement1.textContent = result1.join(', ');
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
-}
+//     // const outputElement1 = document.getElementById("output");
+//     // outputElement1.textContent = result1.join(', ');
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//   });
+// }
 
   .then((result) => {
     // Update the text of the HTML element with ID "output"
