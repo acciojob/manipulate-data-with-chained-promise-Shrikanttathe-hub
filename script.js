@@ -1,49 +1,28 @@
-function manipulateData(inputArray) {
-  // Return a promise that resolves after 3 seconds
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(inputArray);
-    }, 3000);
-  })
-  .then((numbers) => {
-    // Filter out odd numbers after 1 second
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const evenNumbers = numbers.filter(num => num % 2 === 0);
-        resolve(evenNumbers);
-      }, 1000);
-    });
-  })
-  .then((evenNumbers) => {
-    // Multiply even numbers by 2 after 2 seconds
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const multipliedNumbers = evenNumbers.map(num => num * 2);
-        resolve(multipliedNumbers);
-      }, 2000);
-    });
-  })
-// 	  .then((result1) => {
-//     // Update the text of the HTML element with ID "output"
-	  
-//     // const outputElement1 = document.getElementById("output");
-//     // outputElement1.textContent = result1.join(', ');
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
-// }
+// to show output here 
+const arrayNumber = document.getElementById("output");
+,
+let arrayNumber = [1, 2, 3, 4];
 
-  .then((result) => {
-    // Update the text of the HTML element with ID "output"
-	  
-    const outputElement = document.getElementById("output");
-    outputElement.textContent = result.join(', ');
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
+function manipulate(arrayNumber){
+	return new Promise((resolve, reject)=>{
+		setTimeout(()=>{
+			const evenNumber = arrayNumber.filter((num) => num % 2 == 0);
+			output.innerText = evenNumber.join(",");
+			resolve(evenNumber);
+		}, 1000);
+	})
+	.then((evenNumber)=>{
+		return new Promise((resolve, reject)=>{
+			setTimeout(()=>{
+				const evenMulti = arrayNumber.map((num)=> num * 2);
+				output.innerText = evenMulti.join(",");
+				resolve(evenMulti);
+			}, 2000);
+		});
+	})
+	.catch((error)=>{
+		console.log("Error", error);
+	});
+	
 }
-
-// Example usage with the provided array [1, 2, 3, 4]
-manipulateData([1, 2, 3, 4]);
+manipulate(arrayNumber);
