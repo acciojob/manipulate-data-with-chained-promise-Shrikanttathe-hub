@@ -1,31 +1,28 @@
-// to show output here 
 const output = document.getElementById("output");
 
-let arrayNumber = [1, 2, 3, 4];
-
-function manipulate(arrayNumber){
+let arrayOfNumber  = [1,2,3,4];
+function solution(arrayOfNumber){
 	return new Promise((resolve, reject)=>{
 		setTimeout(()=>{
-			const evenNumber = arrayNumber.filter((num) => num % 2 == 0);
+			const evenNumber = arrayOfNumber.filter((num) => num%2==0);
 			output.innerText = evenNumber.join(",");
 			resolve(evenNumber);
-		}, 1000);
+		},1000);
 	})
-	.then((evenNumber)=>{
-		return new Promise((resolve, reject)=>{
+	.then((evenNumber) => {
+		return new Promise((resolve,reject) => {
 			setTimeout(()=>{
-				const evenMulti = evenNumber.map((num)=> num * 2);
-				output.innerText = evenMulti.join(",");
-				resolve(evenMulti);
-			}, 2000);
+				const EvenMulti = evenNumber.map((num) => num*2);
+				output.innerText = EvenMulti.join(",");
+				resolve(EvenMulti);
+			},2000);
 		});
 	})
-	.catch((error)=>{
+	.catch((error) =>{
 		console.log("Error", error);
 	});
+
+	
 	
 }
-manipulate(arrayNumber);
-
-
-
+solution(arrayOfNumber);
