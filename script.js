@@ -1,5 +1,5 @@
 // to show output here 
-const arrayNumber = document.getElementById("output");
+const output = document.getElementById("output");
 ,
 let arrayNumber = [1, 2, 3, 4];
 
