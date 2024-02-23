@@ -14,7 +14,7 @@ function manipulate(arrayNumber){
 	.then((evenNumber)=>{
 		return new Promise((resolve, reject)=>{
 			setTimeout(()=>{
-				const evenMulti = arrayNumber.map((num)=> num * 2);
+				const evenMulti = evenNumber.map((num)=> num * 2);
 				output.innerText = evenMulti.join(",");
 				resolve(evenMulti);
 			}, 2000);
@@ -26,3 +26,6 @@ function manipulate(arrayNumber){
 	
 }
 manipulate(arrayNumber);
+
+
+
