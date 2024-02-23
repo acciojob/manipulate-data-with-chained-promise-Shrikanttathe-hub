@@ -1,6 +1,6 @@
 // to show output here 
 const output = document.getElementById("output");
-,
+
 let arrayNumber = [1, 2, 3, 4];
 
 function manipulate(arrayNumber){
